@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Controls = ({ isRunning, onStart, onPause, onReset }) => {
+const Buttons = ({ isRunning, onStart, onPause, onReset }) => {
   return (
     <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
       <button onClick={onStart} disabled={isRunning}>Iniciar</button>
@@ -10,4 +10,4 @@ const Controls = ({ isRunning, onStart, onPause, onReset }) => {
   );
 };
 
-export default Controls;
+export default Buttons;
