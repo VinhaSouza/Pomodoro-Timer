@@ -8,6 +8,7 @@ function App() {
     <div>
       <h1>Pomodoro Timer</h1>
       <Timer initialMinutes={25}/>
+     
     </div>
   );
 }
