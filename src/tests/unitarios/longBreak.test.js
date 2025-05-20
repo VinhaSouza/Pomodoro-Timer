@@ -13,7 +13,7 @@ describe('Pomodoro Timer - Pausa Longa após 4 ciclos', () => {
 
   test('deve trocar para "descanso longo" após 4 ciclos completos', () => {
   for (let i = 0; i < 4; i++) {
-    timer.start(); // Estudo
+    timer.start(); 
     jest.advanceTimersByTime(25 * 60 * 1000);
     expect(timer.state).toBe('descanso');
 

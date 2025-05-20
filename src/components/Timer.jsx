@@ -3,9 +3,9 @@ import Buttons from './Buttons';
 import CycleIndicator from './CycleIndicator';
 
 const Timer = () => {
-  const WORK_DURATION = 1 * 10;
-  const SHORT_BREAK = 1 * 10;
-  const LONG_BREAK = 1 * 10;
+  const WORK_DURATION = 25 * 60;
+  const SHORT_BREAK = 5 * 60;
+  const LONG_BREAK = 30 * 60;
   const TOTAL_CYCLES = 4;
 
   const [secondsLeft, setSecondsLeft] = useState(WORK_DURATION);
