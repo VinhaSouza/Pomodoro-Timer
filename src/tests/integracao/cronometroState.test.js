@@ -14,21 +14,19 @@ describe("Integração - Cronômetro", () => {
   test("deve iniciar o cronômetro e mudar estado de estudo para descanso", () => {
     expect(timer.state).toBe("estudo");
 
-    timer.start(); // Inicia o cronômetro em estado 'estudo'
+    timer.start(); 
 
-    jest.advanceTimersByTime(25 * 60 * 1000); // Simula 25 minutos
+    jest.advanceTimersByTime(25 * 60 * 1000); 
 
-    expect(timer.state).toBe("descanso"); // Verifica se mudou para descanso
+    expect(timer.state).toBe("descanso"); 
   });
 
   test("deve iniciar o cronômetro e mudar estado de descanso para estudo", () => {
-    // Simula fim do estudo
     timer.start();
     jest.advanceTimersByTime(25 * 60 * 1000);
 
     expect(timer.state).toBe("descanso");
 
-    // Simula fim do descanso
     timer.start();
     jest.advanceTimersByTime(5 * 60 * 1000);
 

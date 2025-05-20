@@ -17,11 +17,11 @@ describe('Pomodoro Timer', () => {
 
   test('deve trocar de "descanso" para "estudo" após o tempo de descanso', () => {
     timer.start();
-    jest.advanceTimersByTime(25 * 60 * 1000); // troca para descanso
+    jest.advanceTimersByTime(25 * 60 * 1000); 
     expect(timer.state).toBe('descanso');
 
-    timer.start(); // inicia descanso
-    jest.advanceTimersByTime(5 * 60 * 1000); // troca para estudo
+    timer.start(); 
+    jest.advanceTimersByTime(5 * 60 * 1000); 
     expect(timer.state).toBe('estudo');
   });
 

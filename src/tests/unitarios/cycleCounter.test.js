@@ -13,11 +13,11 @@ describe('Pomodoro Timer - Contagem de Ciclos', () => {
 
   test('deve contar um ciclo completo após estudo e descanso', () => {
     timer.start();
-    jest.advanceTimersByTime(25 * 60 * 1000); // estudo termina
+    jest.advanceTimersByTime(25 * 60 * 1000); 
     expect(timer.state).toBe('descanso');
 
     timer.start();
-    jest.advanceTimersByTime(5 * 60 * 1000); // descanso termina
+    jest.advanceTimersByTime(5 * 60 * 1000); 
     expect(timer.state).toBe('estudo');
     expect(timer.completedCycles).toBe(1);
   });

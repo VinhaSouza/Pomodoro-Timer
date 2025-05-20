@@ -14,12 +14,10 @@ describe("Integração - Início automático do descanso", () => {
   test("deve iniciar automaticamente o descanso após finalizar o estudo", () => {
     expect(timer.state).toBe("estudo");
 
-    timer.start(); // Inicia o estudo
+    timer.start(); 
 
-    // Avança o tempo de estudo completo
     jest.advanceTimersByTime(25 * 60 * 1000);
 
-    // Espera que o sistema tenha trocado automaticamente para descanso
     expect(timer.state).toBe("descanso");
   });
 });
