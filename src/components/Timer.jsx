@@ -3,15 +3,17 @@ import Buttons from './Buttons';
 import CycleIndicator from './CycleIndicator';
 
 const Timer = () => {
-  const WORK_DURATION = 25 * 60;
-  const SHORT_BREAK = 5 * 60;
-  const LONG_BREAK = 30 * 60;
+  const WORK_DURATION = 1 * 10;
+  const SHORT_BREAK = 1 * 10;
+  const LONG_BREAK = 1 * 10;
   const TOTAL_CYCLES = 4;
 
   const [secondsLeft, setSecondsLeft] = useState(WORK_DURATION);
   const [isRunning, setIsRunning] = useState(false);
   const [mode, setMode] = useState('work');
   const [completedCycles, setCompletedCycles] = useState(0);
+  const [cycleFinished, setCycleFinished] = useState(false);
+
 
   const intervalRef = useRef(null);
 
@@ -63,6 +65,8 @@ const Timer = () => {
         setMode('short-break');
         setSecondsLeft(SHORT_BREAK);
       }
+    } else if (mode === 'long-break') {
+      setCycleFinished(true);
     } else {
       setMode('work');
       setSecondsLeft(WORK_DURATION);
@@ -80,12 +84,13 @@ const Timer = () => {
 
       <Buttons
         isRunning={isRunning}
+        cycleFinished={cycleFinished}
         onStart={startTimer}
         onPause={pauseTimer}
         onReset={resetTimer}
       />
 
-      <CycleIndicator completedCycles={completedCycles % TOTAL_CYCLES} totalCycles={TOTAL_CYCLES} />
+      <CycleIndicator completedCycles={Math.min(completedCycles, 4)} totalCycles={4} />
     </div>
   );
 };
